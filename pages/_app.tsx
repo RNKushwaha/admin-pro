@@ -3,7 +3,6 @@ import { NextPage } from 'next'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
 
-// import 'bootstrap/dist/css/bootstrap.css'
 import '@/assets/scss/app.scss'
 
 type Page<P = unknown> = NextPage<P> & {
