@@ -433,9 +433,11 @@ table.dataTable > thead .sorting_desc_disabled:after {
   width: 84%;
 }
 
-.cz-icon{
+.cz-icon {
   font-size: 16px;
-  svg{vertical-align: text-top;}
+  svg {
+    vertical-align: text-top;
+  }
 }
 
 @media screen and (min-width: 768px) {
