@@ -4,7 +4,8 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Layout from '@/components/layout'
-import Icons from '@/assets/icons'
+import ReactIcon from '@/hoc/ReactIcon'
+import { MdKeyboardBackspace } from '@/components/shared/Icons'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -22,14 +23,7 @@ export default function HomePage(
 
   return (
     <>
-      <Icons name="incorrect" color="red" size={24} />
-      <Icons name="correct" color="red" />
-      <Icons name="plus" color="red" />
-      <Icons name="trash" color="red" size={24} />
-      <Icons name="pencil" color="red" />
-      <Icons name="refresh" color="red" />
-      <Icons name="backword" color="red" />
-      <Icons name="forword" color="red" />
+      <ReactIcon icon={<MdKeyboardBackspace />} />
 
       <div className="card mt-3">
         <div className="card-body">

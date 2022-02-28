@@ -8,7 +8,8 @@ import GuestLayout from '@/components/layout/GuestLayout'
 import ALink from '@/components/shared/ALink'
 import { SubmitHandler, useForm } from 'hooks/useForm'
 import { Form, TextBox } from '@/components/shared/form'
-import Icons from '@/assets/icons'
+import { MdVisibility, MdVisibilityOff } from '@/components/shared/Icons'
+import ReactIcon from '@/hoc/ReactIcon'
 
 interface IFormInput {
   email: string
@@ -109,7 +110,11 @@ export default function LoginPage(
                     </div>
                     <span className="input-group-text">
                       <a role="button" onClick={handlePassword}>
-                        <Icons name="eye" size={20} />
+                        {showPassword ? (
+                          <ReactIcon icon={<MdVisibility size="20" />} />
+                        ) : (
+                          <ReactIcon icon={<MdVisibilityOff size="20" />} />
+                        )}
                       </a>
                     </span>
                     {errors?.password && errors?.password?.message && (

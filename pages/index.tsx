@@ -9,7 +9,8 @@ import BarChart from '@/components/shared/charts/BarChart'
 import PieChart from '@/components/shared/charts/PieChart'
 import DoughnutChart from '@/components/shared/charts/DoughnutChart'
 import BubbleChart from '@/components/shared/charts/BubbleChart'
-import Icons from '@/assets/icons'
+import ReactIcon from '@/hoc/ReactIcon'
+import { MdArrowDownward, MdArrowUpward } from 'react-icons/md'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -42,7 +43,8 @@ export default function HomePage(
               </div>
               <p className="text-muted mt-3 mb-0">
                 <span className="text-success me-1">
-                  <Icons name="arrow-up" /> 2.65%
+                  <ReactIcon icon={<MdArrowUpward />} />
+                  2.65%
                 </span>
                 since last week
               </p>
@@ -63,7 +65,8 @@ export default function HomePage(
               </div>
               <p className="text-muted mt-3 mb-0">
                 <span className="text-danger me-1">
-                  <Icons name="arrow-down" /> 0.82%
+                  <ReactIcon icon={<MdArrowDownward />} />
+                  0.82%
                 </span>
                 since last week
               </p>
@@ -84,7 +87,8 @@ export default function HomePage(
               </div>
               <p className="text-muted mt-3 mb-0">
                 <span className="text-success me-1">
-                  <Icons name="arrow-up" /> 2.65%
+                  <ReactIcon icon={<MdArrowUpward />} />
+                  2.65%
                 </span>
                 since last week
               </p>
@@ -105,7 +109,8 @@ export default function HomePage(
               </div>
               <p className="text-muted mt-3 mb-0">
                 <span className="text-success me-1">
-                  <Icons name="arrow-up" /> 2.65%
+                  <ReactIcon icon={<MdArrowUpward />} />
+                  2.65%
                 </span>
                 since last week
               </p>
@@ -113,14 +118,6 @@ export default function HomePage(
           </div>
         </div>
       </div>
-      <Icons name="incorrect" color="red" size={24} />
-      <Icons name="correct" color="red" />
-      <Icons name="plus" color="red" />
-      <Icons name="trash" color="red" size={24} />
-      <Icons name="pencil" color="red" />
-      <Icons name="refresh" color="red" />
-      <Icons name="backword" color="red" />
-      <Icons name="forword" color="red" />
 
       <div className="card mt-3">
         <div className="card-body">
@@ -226,59 +223,14 @@ export default function HomePage(
         <div className="card-body">
           <h5 className="card-title">Latest Transactions</h5>
           <div className="table-responsive">
-            <table className="table table-striped table-hover dataTable">
-              <thead>
+            <table className="table table-bordered table-sm table-hover">
+              <thead className="">
                 <tr>
-                  <th
-                    className="sorting sorting_desc"
-                    tabIndex={0}
-                    aria-controls="Transactions"
-                    rowSpan={1}
-                    colSpan={1}
-                    aria-label="Order ID: activate to sort column ascending"
-                    aria-sort="descending"
-                  >
-                    Order ID
-                  </th>
-                  <th
-                    className="sorting"
-                    tabIndex={0}
-                    aria-controls="Transactions"
-                    rowSpan={1}
-                    colSpan={1}
-                    aria-label="Billing Name: activate to sort column ascending"
-                  >
-                    Billing Name
-                  </th>
-                  <th
-                    className="sorting"
-                    tabIndex={0}
-                    aria-controls="Transactions"
-                    rowSpan={1}
-                    colSpan={1}
-                    aria-label="Date: activate to sort column ascending"
-                  >
-                    Date
-                  </th>
-                  <th
-                    className="sorting sorting_asc"
-                    tabIndex={0}
-                    aria-controls="Transactions"
-                    rowSpan={1}
-                    colSpan={1}
-                    aria-label="Total: activate to sort column ascending"
-                  >
-                    Total
-                  </th>
-                  <th
-                    tabIndex={0}
-                    aria-controls="Transactions"
-                    rowSpan={1}
-                    colSpan={1}
-                    aria-label="Payment Status"
-                  >
-                    Payment Status
-                  </th>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Billing Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Payment Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -298,58 +250,7 @@ export default function HomePage(
                 </tr>
               </tbody>
             </table>
-
-            <div className="row mb-3">
-              <div className="col-12">
-                <div aria-label="Page navigation" className="pagination-cont">
-                  <ul className="pagination justify-content-end mb-0">
-                    <li className="page-item disabled">
-                      <a
-                        className="page-link"
-                        href="#"
-                        aria-label="Previous"
-                        tabIndex={-1}
-                        aria-disabled="true"
-                      >
-                        <span aria-hidden="true">«</span>
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">
-                        1
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">
-                        2
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#">
-                        3
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <select
-                  className="form-select page-size-sel float-end"
-                  aria-label="Page Size"
-                >
-                  <option value={5}>Show 5</option>
-                  <option value={10}>Show 10</option>
-                  <option value={20}>Show 20</option>
-                  <option value={50}>Show 50</option>
-                  <option value={100}>Show 100</option>
-                </select>
-              </div>
-            </div>
           </div>
-          <br />
           <br />
         </div>
       </div>

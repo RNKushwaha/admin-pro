@@ -1,6 +1,19 @@
 import { useTranslation } from 'react-i18next'
-import Icons from '@/assets/icons'
 import ALink from '@/components/shared/ALink'
+import {
+  MdArticle,
+  MdCategory,
+  MdDashboard,
+  MdGroups,
+  MdLocalOffer,
+  MdLogout,
+  MdOutlinePayments,
+  MdPermMedia,
+  MdSettings,
+  MdShoppingBag,
+  MdShoppingCart,
+} from '@/components/shared/Icons'
+import ReactIcon from '@/hoc/ReactIcon'
 
 type SidebarProps = {
   showMenu: boolean
@@ -20,37 +33,37 @@ export default function Sidebar(props: SidebarProps): JSX.Element {
           <ul className="navCustom nav nav-pills flex-column mb-auto">
             <li className="nav-item">
               <ALink href="/" className="nav-link active" aria-current="page">
-                <Icons name="dashboard" />
+                <ReactIcon icon={<MdDashboard />} />
                 <span className="link_text">Dashboard</span>
               </ALink>
             </li>
             <li>
               <ALink href="/pages" className="nav-link">
-                <Icons name="pages" />
+                <ReactIcon icon={<MdArticle />} />
                 <span className="link_text">Pages</span>
               </ALink>
             </li>
             <li>
               <ALink href="/media" className="nav-link">
-                <Icons name="media" />
+                <ReactIcon icon={<MdPermMedia />} />
                 <span className="link_text">Media</span>
               </ALink>
             </li>
             <li>
               <ALink href="/categories" className="nav-link">
-                <Icons name="categories" />
+                <ReactIcon icon={<MdCategory />} />
                 <span className="link_text">Categories</span>
               </ALink>
             </li>
             <li>
               <ALink href="/orders" className="nav-link">
-                <Icons name="products" />
+                <ReactIcon icon={<MdShoppingBag />} />
                 <span className="link_text">Products</span>
               </ALink>
             </li>
             <li>
               <ALink href="/tags" className="nav-link">
-                <Icons name="tags" />
+                <ReactIcon icon={<MdLocalOffer />} />
                 <span className="link_text">Tags</span>
               </ALink>
             </li>
@@ -60,7 +73,7 @@ export default function Sidebar(props: SidebarProps): JSX.Element {
                 className="nav-link"
                 data-bs-toggle="collapse"
               >
-                <Icons name="orders" />
+                <ReactIcon icon={<MdShoppingCart />} />
                 <span className="link_text">
                   Orders <i className="caret"> </i>
                 </span>
@@ -98,25 +111,25 @@ export default function Sidebar(props: SidebarProps): JSX.Element {
             </li>
             <li>
               <ALink href="/users" className="nav-link">
-                <Icons name="users" />
+                <ReactIcon icon={<MdGroups />} />
                 <span className="link_text">Customers</span>
               </ALink>
             </li>
             <li>
               <ALink href="/settings" className="nav-link">
-                <Icons name="settings" />
+                <ReactIcon icon={<MdSettings />} />
                 <span className="link_text">Settings</span>
               </ALink>
             </li>
             <li>
               <ALink href="/settings/payment-methods" className="nav-link">
-                <Icons name="payments" />
+                <ReactIcon icon={<MdOutlinePayments />} />
                 <span className="link_text">Payment Methods</span>
               </ALink>
             </li>
             <li>
               <ALink href="/logout" className="nav-link">
-                <Icons name="logout" />
+                <ReactIcon icon={<MdLogout />} />
                 <span className="link_text">Log Out</span>
               </ALink>
             </li>

@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
-import Icons from '@/assets/icons'
+import ReactIcon from '@/hoc/ReactIcon'
 import ALink from '@/components/shared/ALink'
-import ThemeChanger from '../shared/ThemeChanger'
-import LanguageChanger from '../shared/LanguageChanger'
+import ThemeChanger from '@/components/shared/ThemeChanger'
+import LanguageChanger from '@/components/shared/LanguageChanger'
+import { MdMenu } from '@/components/shared/Icons'
 
 type NavbarProps = {
   showMenu: boolean
@@ -20,7 +21,7 @@ export default function Navbar(props: NavbarProps): JSX.Element {
     <>
       <header className="headerCustom navbar navbar-expand-sm">
         <a role="button" onClick={props.showNavbar}>
-          <Icons name="menu" size={24} color="#e9ecef" />
+          <ReactIcon icon={<MdMenu size={24} color="#e9ecef" />} />
         </a>
 
         <div className="collapse navbar-collapse">

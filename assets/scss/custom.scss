@@ -432,6 +432,12 @@ table.dataTable > thead .sorting_desc_disabled:after {
   margin-bottom: 0;
   width: 84%;
 }
+
+.cz-icon{
+  font-size: 16px;
+  svg{vertical-align: text-top;}
+}
+
 @media screen and (min-width: 768px) {
   body {
     margin: $header-height 0 0 0;

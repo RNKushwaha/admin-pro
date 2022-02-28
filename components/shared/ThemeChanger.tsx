@@ -1,4 +1,5 @@
-import Icons from '@/assets/icons'
+import ReactIcon from '@/hoc/ReactIcon'
+import { MdLightMode, MdNightlight } from '@/components/shared/Icons'
 
 type Props = {
   darkMode: boolean
@@ -17,7 +18,7 @@ const ThemeChanger = (props: Props) => {
           onClick={() => props.handleDarkMode(true)}
           title="Enable Dark Mode"
         >
-          <Icons name="light" size={24} color={props.color1} />
+          <ReactIcon icon={<MdLightMode size={20} color={props.color1} />} />
         </a>
       )}
       {props.darkMode && (
@@ -27,7 +28,7 @@ const ThemeChanger = (props: Props) => {
           onClick={() => props.handleDarkMode(false)}
           title="Enable Light Mode"
         >
-          <Icons name="dark" size={24} color={props.color2} />
+          <ReactIcon icon={<MdNightlight size={20} color={props.color2} />} />
         </a>
       )}
     </>

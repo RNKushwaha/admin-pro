@@ -7,8 +7,9 @@ import Error404 from '@/assets/img/404-error.svg'
 import GuestLayout from '@/components/layout/GuestLayout'
 import Image from '@/components/shared/Image'
 import Copyright from '@/components/layout/Copyright'
-import Icons from '@/assets/icons'
 import ALink from '@/components/shared/ALink'
+import ReactIcon from '@/hoc/ReactIcon'
+import { MdDashboard, MdOutlineLogin } from '@/components/shared/Icons'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -50,14 +51,14 @@ export default function Custom404() {
                       />
                       <p>{t('The page you are looking for is not avaible!')}</p>
                       <ALink href="/" className="btn btn-primary mx-2">
-                        <Icons name="dashboard" size={16} />
+                        <ReactIcon icon={<MdDashboard size="16" />} />
                         {t('Go to Dashboard')}
                       </ALink>
                       <ALink
                         href="/auth/login"
                         className="btn btn-primary mx-2"
                       >
-                        <Icons name="login" size={16} />
+                        <ReactIcon icon={<MdOutlineLogin size="16" />} />
                         {t('Go to Log In')}
                       </ALink>
                     </div>
