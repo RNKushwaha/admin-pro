@@ -24,6 +24,84 @@ body.m-sidebar {
   }
 }
 
+/* enhanced form elements*/
+.form-check-input:checked[type=checkbox]{
+  background-image: initial;
+}
+.form-check-input:checked{
+  background-color:initial;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  /* Adjusts the position of the checkboxes on the text baseline */
+  vertical-align: 0;
+  margin-top: 0px;
+  margin-right: 2px;
+  /* Set here so that Windows' High-Contrast Mode can override */
+  color: $theme-btn-bg-light;
+  border-color: $input-border-color;
+}
+
+input[type="checkbox"]::before {
+  content: "✔";
+  position: absolute;
+  font-size: 1.2em;
+  right: 5px;
+  top: 0;
+  visibility: hidden;
+  transform: translate(3px, -3px) scale(0);
+  transform-origin: left;
+  transition: all 0.3s ease-in;
+}
+
+input[type="checkbox"]:checked::before {
+  /* Use `visibility` instead of `display` to avoid recalculating layout */
+  visibility: visible;
+  transform: translate(3px, -3px) scale(1);
+  transition: all 0.3s cubic-bezier(0.05, 0.15, 1.5, 3);
+}
+
+input[type="checkbox"]:disabled {
+  background: #ddd;
+  color: gray;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin-right: 2px;
+  border: 2px solid $input-border-color;
+  vertical-align: -5px;
+  /* Adjusts the position of the checkboxes on the text baseline */
+  outline: none;
+}
+
+input[type="radio"]::before {
+  display: block;
+  content: " ";
+  width: 10px;
+  height: 10px;
+  border-radius: 6px;
+  background-color: $theme-btn-bg-light;
+  font-size: 1.2em;
+  transform: translate(3px, 3px) scale(0);
+  transform-origin: center;
+  transition: all 0.3s ease-in;
+}
+
+input[type="radio"]:checked::before {
+  transform: translate(3px, 3px) scale(1);
+  transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+}
+/* enhanced form elements*/
+
 .theme-btn {
   align-items: center;
   appearance: none;
@@ -239,7 +317,7 @@ body.theme-dark {
     color: $gray-500;
     transition: 0.5s;
   }
-  .form-control {
+  .form-control,.input-group-text {
     color: $gray-300;
     background-color: $gray-800;
     border-color: $gray-700;

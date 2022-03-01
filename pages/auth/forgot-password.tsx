@@ -6,8 +6,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import GuestLayout from '@/components/layout/GuestLayout'
 import ALink from '@/components/shared/ALink'
-import { SubmitHandler, useForm } from 'hooks/useForm'
+import { SubmitHandler, useForm } from '@/hooks/use-form'
 import { Form, TextBox } from '@/components/shared/form'
+import Copyright from '@/components/layout/Copyright'
 
 interface IFormInput {
   email: string
@@ -67,11 +68,11 @@ export default function ForgotPage(
                       validation={{
                         required: {
                           value: true,
-                          message: 'You must enter your Email',
+                          message: t('You must enter your Email'),
                         },
                         pattern: {
                           value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                          message: 'You must enter a valid Email',
+                          message: t('You must enter a valid Email'),
                         },
                       }}
                     />
@@ -90,10 +91,7 @@ export default function ForgotPage(
                     {t('Submit')}
                   </button>
                   <p className="mt-5 mb-3 text-muted">
-                    &copy; {year}{' '}
-                    <a href="https://www.cruzersoftwares.com" target="_blank">
-                      CruzerSoftwares
-                    </a>
+                    &copy; {year} <Copyright />
                   </p>
                 </div>
               </div>

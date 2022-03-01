@@ -1,0 +1,21 @@
+{
+    "Dashboard": "Dashboard",
+    "Pages": "Pages",
+    "Media": "Media",
+    "Categories": "Categories",
+    "Products": "Products",
+    "Tags": "Tags",
+    "Orders": "Orders",
+    "All": "All",
+    "Pending": "Pending",
+    "Processed": "Processed",
+    "Cancelled": "Cancelled",
+    "Customers": "Customers",
+    "Settings": "Settings",
+    "Payment Methods": "Payment Methods",
+    "Log Out": "Log Out",
+    "New Store":"New Store",
+    "Profile":"Profile",
+    "Enable Dark Mode":"Enable Dark Mode",
+    "Enable Light Mode":"Enable Light Mode"
+}

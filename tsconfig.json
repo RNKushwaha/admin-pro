@@ -4,10 +4,16 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/assets/*": ["assets/*"],
+      "@/hoc": ["hoc"],
       "@/hoc/*": ["hoc/*"],
+      "@/hooks": ["hooks"],
       "@/hooks/*": ["hooks/*"],
+      "@/constants/*": ["constants/*"],
+      "@/context": ["context"],
       "@/context/*": ["context/*"],
-      "@/types/*": ["types/*"],
+      "@/interfaces": ["interfaces"],
+      "@/interfaces/*": ["interfaces/*"],
+      "@/utils": ["utils"],
       "@/utils/*": ["utils/*"]
     },
     "incremental": true,

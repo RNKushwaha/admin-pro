@@ -1,4 +1,4 @@
-const updateThemeMode = (mode: boolean) => {
+export const updateThemeMode = (mode: boolean) => {
   const bodyEl = document.body
   if (mode) {
     bodyEl.classList.add('theme-dark')
@@ -8,5 +8,3 @@ const updateThemeMode = (mode: boolean) => {
     bodyEl.classList.add('theme-light')
   }
 }
-
-export default updateThemeMode

@@ -14,57 +14,59 @@ import {
   MdShoppingCart,
 } from '@/components/shared/Icons'
 import ReactIcon from '@/hoc/ReactIcon'
+import { copyright } from '@/constants/common'
 
 type SidebarProps = {
   showMenu: boolean
 }
 
 export default function Sidebar(props: SidebarProps): JSX.Element {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('menu')
   return (
     <>
       <div className={`l-navbar ${!props.showMenu ? '' : 'menuOpen'}`}>
         <ALink href="/" className="nav_logo">
           <span className="nav_logo-name text-gray-200 mt-2 h4">
-            {t('CruzerAdmin')}
+            {copyright?.site?.label}
           </span>
         </ALink>
+
         <div className="scrollablebar mt-1">
           <ul className="navCustom nav nav-pills flex-column mb-auto">
             <li className="nav-item">
-              <ALink href="/" className="nav-link active" aria-current="page">
+              <ALink href="/" className="nav-link" aria-current="page">
                 <ReactIcon icon={<MdDashboard />} />
-                <span className="link_text">Dashboard</span>
+                <span className="link_text">{t('Dashboard')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/pages" className="nav-link">
                 <ReactIcon icon={<MdArticle />} />
-                <span className="link_text">Pages</span>
+                <span className="link_text">{t('Pages')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/media" className="nav-link">
                 <ReactIcon icon={<MdPermMedia />} />
-                <span className="link_text">Media</span>
+                <span className="link_text">{t('Media')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/categories" className="nav-link">
                 <ReactIcon icon={<MdCategory />} />
-                <span className="link_text">Categories</span>
+                <span className="link_text">{t('Categories')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/orders" className="nav-link">
                 <ReactIcon icon={<MdShoppingBag />} />
-                <span className="link_text">Products</span>
+                <span className="link_text">{t('Products')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/tags" className="nav-link">
                 <ReactIcon icon={<MdLocalOffer />} />
-                <span className="link_text">Tags</span>
+                <span className="link_text">{t('Tags')}</span>
               </ALink>
             </li>
             <li className="hasMenu">
@@ -75,7 +77,7 @@ export default function Sidebar(props: SidebarProps): JSX.Element {
               >
                 <ReactIcon icon={<MdShoppingCart />} />
                 <span className="link_text">
-                  Orders <i className="caret"> </i>
+                  {t('Orders')} <i className="caret"> </i>
                 </span>
               </a>
               <ul
@@ -84,27 +86,27 @@ export default function Sidebar(props: SidebarProps): JSX.Element {
                 data-bs-parent="#menu"
               >
                 <li>
-                  <ALink href="/orders" className="nav-link">
+                  <ALink href="/orders" className="nav-link" active={true}>
                     {' '}
-                    <span className="link_text">All</span>
+                    <span className="link_text">{t('All')}</span>
                   </ALink>
                 </li>
                 <li>
                   <ALink href="/orders/pending" className="nav-link">
                     {' '}
-                    <span className="link_text">Pending</span>
+                    <span className="link_text">{t('Pending')}</span>
                   </ALink>
                 </li>
                 <li>
                   <ALink href="/orders/processes" className="nav-link">
                     {' '}
-                    <span className="link_text">Processed</span>
+                    <span className="link_text">{t('Processed')}</span>
                   </ALink>
                 </li>
                 <li>
                   <ALink href="/orders/cancelled" className="nav-link">
                     {' '}
-                    <span className="link_text">Cancelled</span>
+                    <span className="link_text">{t('Cancelled')}</span>
                   </ALink>
                 </li>
               </ul>
@@ -112,25 +114,25 @@ export default function Sidebar(props: SidebarProps): JSX.Element {
             <li>
               <ALink href="/users" className="nav-link">
                 <ReactIcon icon={<MdGroups />} />
-                <span className="link_text">Customers</span>
+                <span className="link_text">{t('Customers')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/settings" className="nav-link">
                 <ReactIcon icon={<MdSettings />} />
-                <span className="link_text">Settings</span>
+                <span className="link_text">{t('Settings')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/settings/payment-methods" className="nav-link">
                 <ReactIcon icon={<MdOutlinePayments />} />
-                <span className="link_text">Payment Methods</span>
+                <span className="link_text">{t('Payment Methods')}</span>
               </ALink>
             </li>
             <li>
               <ALink href="/logout" className="nav-link">
                 <ReactIcon icon={<MdLogout />} />
-                <span className="link_text">Log Out</span>
+                <span className="link_text">{t('Log Out')}</span>
               </ALink>
             </li>
           </ul>

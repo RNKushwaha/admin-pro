@@ -10,7 +10,7 @@ import { MdKeyboardBackspace } from '@/components/shared/Icons'
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'menu'])),
     },
   }
 }
@@ -161,6 +161,6 @@ export default function HomePage(
 }
 
 HomePage.getLayout = function getLayout(page: ReactElement) {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('menu')
   return <Layout title={t('Pages')}>{page}</Layout>
 }

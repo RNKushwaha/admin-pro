@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { localesCustom } from '@/utils/constants/common'
+import { localesCustom } from 'constants/common'
 
 type Props = {
   darkMode: boolean

@@ -15,7 +15,7 @@ type NavbarProps = {
 
 export default function Navbar(props: NavbarProps): JSX.Element {
   const { locale, /* locales,  */ asPath } = useRouter()
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('menu')
 
   return (
     <>
@@ -25,9 +25,9 @@ export default function Navbar(props: NavbarProps): JSX.Element {
         </a>
 
         <div className="collapse navbar-collapse">
-          <a className="text-gray-200 h5 mt-2" aria-current="page">
-            {t('CruzerAdmin')}
-          </a>
+          {/* <a className="text-gray-200 h6 mt-2" aria-current="page">
+            {copyright?.site?.label}
+          </a> */}
         </div>
 
         <form className="col-lg-4 col-md-4 col-lg-auto me-3 d-none d-md-block">
@@ -77,17 +77,17 @@ export default function Navbar(props: NavbarProps): JSX.Element {
           >
             <li>
               <ALink className="dropdown-item" href="/stores/add">
-                New Store
+                {t('New Store')}
               </ALink>
             </li>
             <li>
               <ALink className="dropdown-item" href="/settings">
-                Settings
+                {t('Settings')}
               </ALink>
             </li>
             <li>
               <ALink className="dropdown-item" href="/profile">
-                Profile
+                {t('Profile')}
               </ALink>
             </li>
             <li>
@@ -95,7 +95,7 @@ export default function Navbar(props: NavbarProps): JSX.Element {
             </li>
             <li>
               <ALink className="dropdown-item" href="/logout">
-                Sign out
+                {t('Log out')}
               </ALink>
             </li>
           </ul>

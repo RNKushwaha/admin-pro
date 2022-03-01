@@ -1,0 +1,21 @@
+{
+    "Dashboard": "Tableau de bord",
+    "Pages": "Pages",
+    "Media": "Médias",
+    "Categories": "Catégories",
+    "Products": "Des produits",
+    "Tags": "Mots clés",
+    "Orders": "Ordres",
+    "All": "Tous",
+    "Pending": "En attente",
+    "Processed": "Traité",
+    "Cancelled": "Annulé",
+    "Customers": "Les clients",
+    "Settings": "Réglages",
+    "Payment Methods": "méthodes de payement",
+    "Log Out": "Se déconnecter",
+    "New Store":"Nouveau magasin",
+    "Profile":"Profil",
+    "Enable Dark Mode":"Activer le mode sombre",
+    "Enable Light Mode":"Activer le mode lumière"
+}

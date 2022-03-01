@@ -15,7 +15,7 @@ import { MdArrowDownward, MdArrowUpward } from 'react-icons/md'
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'menu'])),
     },
   }
 }
@@ -259,6 +259,6 @@ export default function HomePage(
 }
 
 HomePage.getLayout = function getLayout(page: ReactElement) {
-  const { t } = useTranslation('common')
-  return <Layout title={t('Home')}>{page}</Layout>
+  const { t } = useTranslation('menu')
+  return <Layout title={t('Dashboard')}>{page}</Layout>
 }

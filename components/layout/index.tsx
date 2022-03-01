@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
 import Navbar from './Navbar'
-import updateThemeMode from '@/utils/updateThemeMode'
+import { updateThemeMode } from '@/utils'
 
 interface LayoutProps {
   title?: string
