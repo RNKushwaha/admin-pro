@@ -20,6 +20,7 @@ body.l-sidebar {
 body.m-sidebar {
   .link_text {
     display: none;
+    transition: 0.5s;
   }
 }
 
@@ -174,7 +175,7 @@ body.m-sidebar {
         position: absolute;
         left: 0;
         width: 2px;
-        height: 32px;
+        height: 40px;
         background-color: $primary;
       }
     }
@@ -462,9 +463,11 @@ table.dataTable > thead .sorting_desc_disabled:after {
       left: 80px;
     }
     .nav-link {
-      svg.bi {
-        height: 32px;
-        width: 32px;
+      span.cz-icon{
+        svg {
+          height: 32px;
+          width: 32px;
+        }
       }
     }
   }
@@ -484,11 +487,14 @@ table.dataTable > thead .sorting_desc_disabled:after {
   body.l-sidebar {
     .link_text {
       display: none;
+      transition: 0.5s;
     }
     .nav-link {
-      svg.bi {
-        height: 32px;
-        width: 32px;
+      span.cz-icon{
+        svg {
+          height: 32px;
+          width: 32px;
+        }
       }
     }
     .footer {

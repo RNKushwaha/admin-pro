@@ -1,9 +1,10 @@
-import React, { ReactNode, useLayoutEffect, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import Head from 'next/head'
 import updateThemeMode from '@/utils/updateThemeMode'
 import ThemeChanger from '../shared/ThemeChanger'
 import { useRouter } from 'next/router'
 import LanguageChanger from '../shared/LanguageChanger'
+import { useIsomorphicLayoutEffect } from 'ahooks'
 
 type Props = {
   children?: ReactNode
@@ -14,7 +15,7 @@ const GuestLayout = ({ children, title = 'Admin' }: Props): any => {
   const { locale, /* locales,  */ asPath } = useRouter()
   const [darkMode, setDarkMode] = useState(false)
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const bodyEl = document.body
     bodyEl.classList.add('n-sidebar')
     bodyEl.classList.remove('l-sidebar', 'm-sidebar')
