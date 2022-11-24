@@ -76,11 +76,6 @@ export default function Navbar(props: NavbarProps): JSX.Element {
             aria-labelledby="dropdownUser1"
           >
             <li>
-              <ALink className="dropdown-item" href="/stores/add">
-                {t('New Store')}
-              </ALink>
-            </li>
-            <li>
               <ALink className="dropdown-item" href="/settings">
                 {t('Settings')}
               </ALink>

@@ -1,5 +1,5 @@
 import { GetStaticProps /* , InferGetStaticPropsType */ } from 'next'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Error404 from '@/assets/img/404-error.svg'
@@ -78,7 +78,7 @@ export default function Custom404() {
   )
 }
 
-Custom404.getLayout = function getLayout(page: ReactElement) {
+Custom404.getLayout = function getLayout(page: JSX.Element) {
   const { t } = useTranslation('common')
   return <GuestLayout title={t('404 - Page Not Found')}>{page}</GuestLayout>
 }

@@ -10,7 +10,7 @@ export const copyright = {
     link: 'https://www.cruzersoftwares.com',
   },
   site: {
-    label: 'Ultimate',
-    labelSmall: 'Ulti',
+    label: 'Cruzer',
+    labelSmall: 'C',
   },
 }

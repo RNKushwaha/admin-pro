@@ -1,5 +1,5 @@
 import { GetStaticProps /* , InferGetStaticPropsType */ } from 'next'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Error500 from '@/assets/img/500-error.svg'
@@ -77,7 +77,7 @@ export default function Custom500() {
   )
 }
 
-Custom500.getLayout = function getLayout(page: ReactElement) {
+Custom500.getLayout = function getLayout(page: JSX.Element) {
   const { t } = useTranslation('common')
   return (
     <GuestLayout title={t('Ooops! Server Error has occured')}>

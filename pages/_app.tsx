@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react'
+import { useEffect } from 'react'
 import { NextPage } from 'next'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
@@ -6,11 +6,11 @@ import { appWithTranslation } from 'next-i18next'
 import '@/assets/scss/app.scss'
 
 type Page<P = unknown> = NextPage<P> & {
-  getLayout?: (page: ReactNode) => ReactNode
+  getLayout?: (page: JSX.Element) => JSX.Element
 }
 
 type Props = AppProps & {
-  Component: Page
+  Component: Page & any
 }
 
 export function reportWebVitals(metric: NextWebVitalsMetric): void {
@@ -34,7 +34,7 @@ const MyApp = ({ Component, pageProps }: Props) => {
     // typeof document !== undefined ? require('bootstrap/dist/js/bootstrap.bundle.min.js') : null
   }, [])
 
-  const getLayout = Component.getLayout || ((page: ReactNode) => page)
+  const getLayout = Component.getLayout || ((page: JSX.Element) => page)
 
   return <>{getLayout(<Component {...pageProps} />)}</>
 }

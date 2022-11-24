@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import { updateThemeMode } from '@/utils'
 import ThemeChanger from '../shared/ThemeChanger'
@@ -7,7 +7,7 @@ import LanguageChanger from '../shared/LanguageChanger'
 import { useIsomorphicLayoutEffect } from '@/hooks'
 
 type Props = {
-  children?: ReactNode
+  children?: JSX.Element
   title?: string
 }
 

@@ -2,16 +2,10 @@ import { useTranslation } from 'react-i18next'
 import ALink from '@/components/shared/ALink'
 import {
   MdArticle,
-  MdCategory,
   MdDashboard,
-  MdGroups,
-  MdLocalOffer,
   MdLogout,
-  MdOutlinePayments,
   MdPermMedia,
   MdSettings,
-  MdShoppingBag,
-  MdShoppingCart,
 } from '@/components/shared/Icons'
 import ReactIcon from '@/hoc/ReactIcon'
 import { copyright } from '@/constants/common'
@@ -52,81 +46,9 @@ export default function Sidebar(props: SidebarProps): JSX.Element {
               </ALink>
             </li>
             <li>
-              <ALink href="/categories" className="nav-link">
-                <ReactIcon icon={<MdCategory />} />
-                <span className="link_text">{t('Categories')}</span>
-              </ALink>
-            </li>
-            <li>
-              <ALink href="/orders" className="nav-link">
-                <ReactIcon icon={<MdShoppingBag />} />
-                <span className="link_text">{t('Products')}</span>
-              </ALink>
-            </li>
-            <li>
-              <ALink href="/tags" className="nav-link">
-                <ReactIcon icon={<MdLocalOffer />} />
-                <span className="link_text">{t('Tags')}</span>
-              </ALink>
-            </li>
-            <li className="hasMenu">
-              <a
-                href="#productMenu"
-                className="nav-link"
-                data-bs-toggle="collapse"
-              >
-                <ReactIcon icon={<MdShoppingCart />} />
-                <span className="link_text">
-                  {t('Orders')} <i className="caret"> </i>
-                </span>
-              </a>
-              <ul
-                className="collapse nav"
-                id="productMenu"
-                data-bs-parent="#menu"
-              >
-                <li>
-                  <ALink href="/orders" className="nav-link" active={true}>
-                    {' '}
-                    <span className="link_text">{t('All')}</span>
-                  </ALink>
-                </li>
-                <li>
-                  <ALink href="/orders/pending" className="nav-link">
-                    {' '}
-                    <span className="link_text">{t('Pending')}</span>
-                  </ALink>
-                </li>
-                <li>
-                  <ALink href="/orders/processes" className="nav-link">
-                    {' '}
-                    <span className="link_text">{t('Processed')}</span>
-                  </ALink>
-                </li>
-                <li>
-                  <ALink href="/orders/cancelled" className="nav-link">
-                    {' '}
-                    <span className="link_text">{t('Cancelled')}</span>
-                  </ALink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ALink href="/users" className="nav-link">
-                <ReactIcon icon={<MdGroups />} />
-                <span className="link_text">{t('Customers')}</span>
-              </ALink>
-            </li>
-            <li>
               <ALink href="/settings" className="nav-link">
                 <ReactIcon icon={<MdSettings />} />
                 <span className="link_text">{t('Settings')}</span>
-              </ALink>
-            </li>
-            <li>
-              <ALink href="/settings/payment-methods" className="nav-link">
-                <ReactIcon icon={<MdOutlinePayments />} />
-                <span className="link_text">{t('Payment Methods')}</span>
               </ALink>
             </li>
             <li>

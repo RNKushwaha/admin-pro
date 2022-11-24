@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -103,7 +103,7 @@ export default function ForgotPage(
   )
 }
 
-ForgotPage.getLayout = function getLayout(page: ReactElement) {
+ForgotPage.getLayout = function getLayout(page: JSX.Element) {
   const { t } = useTranslation('auth')
   return <GuestLayout title={t('Forgot Password')}>{page}</GuestLayout>
 }

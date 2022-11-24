@@ -1,5 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import React, { ReactElement } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -20,6 +20,13 @@ export default function HomePage(
 ) {
   // eslint-disable-next-line no-console
   console.log(props)
+  const [rows, setRows] = useState([])
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => response.json())
+      .then((json) => setRows(json))
+  }, [])
 
   return (
     <>
@@ -27,7 +34,7 @@ export default function HomePage(
 
       <div className="card mt-3">
         <div className="card-body">
-          <h5 className="card-title">Latest Transactions</h5>
+          <h5 className="card-title">Pages</h5>
           <div className="table-responsive">
             <table className="table table-striped table-hover dataTable">
               <thead>
@@ -35,28 +42,18 @@ export default function HomePage(
                   <th
                     className="sorting sorting_desc"
                     tabIndex={0}
-                    aria-controls="Transactions"
+                    aria-controls="Pages"
                     rowSpan={1}
                     colSpan={1}
-                    aria-label="Order ID: activate to sort column ascending"
+                    aria-label="ID: activate to sort column ascending"
                     aria-sort="descending"
                   >
-                    Order ID
+                    Title
                   </th>
                   <th
                     className="sorting"
                     tabIndex={0}
-                    aria-controls="Transactions"
-                    rowSpan={1}
-                    colSpan={1}
-                    aria-label="Billing Name: activate to sort column ascending"
-                  >
-                    Billing Name
-                  </th>
-                  <th
-                    className="sorting"
-                    tabIndex={0}
-                    aria-controls="Transactions"
+                    aria-controls="Pages"
                     rowSpan={1}
                     colSpan={1}
                     aria-label="Date: activate to sort column ascending"
@@ -64,41 +61,27 @@ export default function HomePage(
                     Date
                   </th>
                   <th
-                    className="sorting sorting_asc"
                     tabIndex={0}
-                    aria-controls="Transactions"
+                    aria-controls="Pages"
                     rowSpan={1}
                     colSpan={1}
-                    aria-label="Total: activate to sort column ascending"
+                    aria-label="Status"
                   >
-                    Total
-                  </th>
-                  <th
-                    tabIndex={0}
-                    aria-controls="Transactions"
-                    rowSpan={1}
-                    colSpan={1}
-                    aria-label="Payment Status"
-                  >
-                    Payment Status
+                    Status
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td>text</td>
-                </tr>
-                <tr>
-                  <td>1,001</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td>text</td>
-                </tr>
+                {rows &&
+                  rows?.map((row: any) => {
+                    return (
+                      <tr key={row?.id}>
+                        <td>{row?.id}</td>
+                        <td>{row?.title}</td>
+                        <td>{row?.userId}</td>
+                      </tr>
+                    )
+                  })}
               </tbody>
             </table>
 
@@ -160,7 +143,7 @@ export default function HomePage(
   )
 }
 
-HomePage.getLayout = function getLayout(page: ReactElement) {
+HomePage.getLayout = function getLayout(page: JSX.Element) {
   const { t } = useTranslation('menu')
   return <Layout title={t('Pages')}>{page}</Layout>
 }

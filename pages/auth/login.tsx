@@ -1,16 +1,17 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
-import React, { ReactElement, useState } from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import GuestLayout from '@/components/layout/GuestLayout'
 import ALink from '@/components/shared/ALink'
 import { SubmitHandler, useForm } from '@/hooks/use-form'
-import { Form, TextBox } from '@/components/shared/form'
+import { CheckBox, Form, TextBox } from '@/components/shared/form'
 import { MdVisibility, MdVisibilityOff } from '@/components/shared/Icons'
 import ReactIcon from '@/hoc/ReactIcon'
 import Copyright from '@/components/layout/Copyright'
+import { Button } from '@/components/shared/buttons'
 
 interface IFormInput {
   email: string
@@ -126,27 +127,17 @@ export default function LoginPage(
                   </div>
 
                   <div className="form-check mb-3 mt-3">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="flexCheckDefault"
+                    <CheckBox
+                      name="rememberMe"
+                      label={t('Remember me')}
+                      register={register}
+                      error={errors?.rememberMe}
                     />
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexCheckDefault"
-                    >
-                      {t('Remember me')}
-                    </label>
                     <ALink href="/auth/forgot-password" className="float-end">
                       {t('Forgot Password')}?
                     </ALink>
                   </div>
-                  <button
-                    className="w-100 btn btn-lg btn-primary"
-                    type="submit"
-                  >
-                    {t('Sign In')}
-                  </button>
+                  <Button label={t('Sign In')} width="full" size="lg" />
                   <p className="mt-5 mb-3 text-muted">
                     &copy; {year} <Copyright />
                   </p>
@@ -160,7 +151,7 @@ export default function LoginPage(
   )
 }
 
-LoginPage.getLayout = function getLayout(page: ReactElement) {
+LoginPage.getLayout = function getLayout(page: JSX.Element) {
   const { t } = useTranslation('auth')
   return <GuestLayout title={t('Sign In')}>{page}</GuestLayout>
 }

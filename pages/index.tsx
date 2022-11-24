@@ -1,5 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -11,6 +11,7 @@ import DoughnutChart from '@/components/shared/charts/DoughnutChart'
 import BubbleChart from '@/components/shared/charts/BubbleChart'
 import ReactIcon from '@/hoc/ReactIcon'
 import { MdArrowDownward, MdArrowUpward } from 'react-icons/md'
+import { Body, Card } from '@/components/shared/cards'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -30,8 +31,8 @@ export default function HomePage(
     <>
       <div className="row">
         <div className="col-md-6 col-xl-3 mb-3">
-          <div className="card">
-            <div className="card-body">
+          <Card>
+            <Body>
               <div className="float-end mt-2">chart</div>
               <div>
                 <h4 className="mb-1 mt-1">
@@ -48,12 +49,12 @@ export default function HomePage(
                 </span>
                 since last week
               </p>
-            </div>
-          </div>
+            </Body>
+          </Card>
         </div>
         <div className="col-md-6 col-xl-3 mb-3">
-          <div className="card">
-            <div className="card-body">
+          <Card>
+            <Body>
               <div className="float-end mt-2">chart</div>
               <div>
                 <h4 className="mb-1 mt-1">
@@ -61,7 +62,7 @@ export default function HomePage(
                     <span>5,643</span>
                   </span>
                 </h4>
-                <p className="text-muted mb-0">Orders</p>
+                <p className="text-muted mb-0">Jobs</p>
               </div>
               <p className="text-muted mt-3 mb-0">
                 <span className="text-danger me-1">
@@ -70,12 +71,12 @@ export default function HomePage(
                 </span>
                 since last week
               </p>
-            </div>
-          </div>
+            </Body>
+          </Card>
         </div>
         <div className="col-md-6 col-xl-3 mb-3">
-          <div className="card">
-            <div className="card-body">
+          <Card>
+            <Body>
               <div className="float-end mt-2">chart</div>
               <div>
                 <h4 className="mb-1 mt-1">
@@ -92,12 +93,12 @@ export default function HomePage(
                 </span>
                 since last week
               </p>
-            </div>
-          </div>
+            </Body>
+          </Card>
         </div>
         <div className="col-md-6 col-xl-3 mb-3">
-          <div className="card">
-            <div className="card-body">
+          <Card>
+            <Body>
               <div className="float-end mt-2">chart</div>
               <div>
                 <h4 className="mb-1 mt-1">
@@ -114,13 +115,13 @@ export default function HomePage(
                 </span>
                 since last week
               </p>
-            </div>
-          </div>
+            </Body>
+          </Card>
         </div>
       </div>
 
-      <div className="card mt-3">
-        <div className="card-body">
+      <Card className="mt-3">
+        <Body>
           <div className="float-end">
             <button
               className="theme-btn theme-btn-sm mx-2 active"
@@ -135,11 +136,11 @@ export default function HomePage(
           <h5 className="card-title">Sales Analytics</h5>
           <LineChart />
           <br />
-        </div>
-      </div>
+        </Body>
+      </Card>
 
-      <div className="card mt-3">
-        <div className="card-body">
+      <Card className="mt-3">
+        <Body>
           <div className="float-end">
             <button
               className="theme-btn theme-btn-sm mx-2 active"
@@ -151,16 +152,16 @@ export default function HomePage(
               Yearly
             </button>
           </div>
-          <h5 className="card-title">Top Selling Products</h5>
+          <h5 className="card-title">Top Jobs</h5>
           <BarChart />
           <br />
-        </div>
-      </div>
+        </Body>
+      </Card>
 
       <div className="row">
         <div className="col-md-6 col-xl-3 mb-3">
-          <div className="card mt-3">
-            <div className="card-body">
+          <Card className="mt-3">
+            <Body>
               <div className="float-end">
                 <button
                   className="theme-btn theme-btn-sm mx-2 active"
@@ -175,12 +176,12 @@ export default function HomePage(
               <h5 className="card-title">Top Users</h5>
               <PieChart />
               <br />
-            </div>
-          </div>
+            </Body>
+          </Card>
         </div>
         <div className="col-md-6 col-xl-3 mb-3">
-          <div className="card mt-3">
-            <div className="card-body">
+          <Card className="mt-3">
+            <Body>
               <div className="float-end">
                 <button
                   className="theme-btn theme-btn-sm mx-2 active"
@@ -192,16 +193,16 @@ export default function HomePage(
                   Yearly
                 </button>
               </div>
-              <h5 className="card-title">Top Vendors</h5>
+              <h5 className="card-title">Top Company</h5>
               <DoughnutChart />
               <br />
-            </div>
-          </div>
+            </Body>
+          </Card>
         </div>
       </div>
 
-      <div className="card mt-3">
-        <div className="card-body">
+      <Card className="mt-3">
+        <Body>
           <div className="float-end">
             <button
               className="theme-btn theme-btn-sm mx-2 active"
@@ -213,52 +214,46 @@ export default function HomePage(
               Yearly
             </button>
           </div>
-          <h5 className="card-title">Top Order Locations</h5>
+          <h5 className="card-title">Top User Locations</h5>
           <BubbleChart />
           <br />
-        </div>
-      </div>
+        </Body>
+      </Card>
 
-      <div className="card mt-3">
-        <div className="card-body">
-          <h5 className="card-title">Latest Transactions</h5>
+      <Card className="mt-3">
+        <Body>
+          <h5 className="card-title">Latest Registrations</h5>
           <div className="table-responsive">
             <table className="table table-bordered table-sm table-hover">
               <thead className="">
                 <tr>
-                  <th scope="col">Order ID</th>
-                  <th scope="col">Billing Name</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
                   <th scope="col">Date</th>
-                  <th scope="col">Total</th>
-                  <th scope="col">Payment Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1,001</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td>text</td>
+                  <td>Amit Kumar</td>
+                  <td>akamit@gmail.com</td>
+                  <td>7 March, 2022</td>
                 </tr>
                 <tr>
-                  <td>1,001</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td>text</td>
+                  <td>Sumit Kumar</td>
+                  <td>sumit@gmail.com</td>
+                  <td>4 March, 2022</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <br />
-        </div>
-      </div>
+        </Body>
+      </Card>
     </>
   )
 }
 
-HomePage.getLayout = function getLayout(page: ReactElement) {
+HomePage.getLayout = function getLayout(page: JSX.Element) {
   const { t } = useTranslation('menu')
   return <Layout title={t('Dashboard')}>{page}</Layout>
 }
