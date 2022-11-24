@@ -1,5 +1,10 @@
 {
-  "private": true,
+  "name": "admin-pro",
+  "version": "0.0.1",
+  "description": "NextJS Admin Dashboard",
+  "author": "RN Kushwaha <rn.kushwaha022@gmail.com>",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "export": "next build && next export",
     "dev": "next dev -p 3004",

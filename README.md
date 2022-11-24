@@ -1,3 +1,3 @@
-# Crewed
+# AdminPro
 
-NextJS Admin
+NextJS Admin dashboard
