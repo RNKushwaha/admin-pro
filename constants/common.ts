@@ -10,7 +10,7 @@ export const copyright = {
     link: 'https://www.cruzersoftwares.com',
   },
   site: {
-    label: 'Cruzer',
+    label: 'AdminPro',
     labelSmall: 'C',
   },
 }
